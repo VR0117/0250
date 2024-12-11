@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('/Users/vishwa/Documents/0250/Tata-Altroz.jpg') no-repeat center center fixed; /* Replace with your own background image */
+    background-size: cover;
+    color: white;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Main Container */
+.container {
+    max-width: 700px; /* Increased box size */
+    margin: 50px auto;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)); /* Gradient overlay */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 2s forwards; /* Combined fade and scale animation */
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center;
+    color: #1E90FF; /* Blue color to match the background */
+    font-size: 3rem; /* Larger font size */
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: slideIn 1.5s forwards, glow 2s infinite alternate; /* Slide-in and glow effect */
+}
+
+/* Glow Effect for Heading */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #1E90FF, 0 0 20px #1E90FF, 0 0 30px #1E90FF;
+    }
+    100% {
+        text-shadow: 0 0 15px #1E90FF, 0 0 30px #1E90FF, 0 0 45px #1E90FF;
+    }
+}
+
+/* Info Block */
+.info {
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Light background for readability */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Smooth transform effect on hover */
+}
+
+.info p {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #333; /* Darker color for text */
+}
+
+.info p strong {
+    color: #1E90FF; /* Blue color for labels like 'Name' */
+}
+
+/* Hover effect for info box */
+.info:hover {
+    transform: translateY(-5px); /* Slightly raises the info box */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 40px;
+    color: #fff; /* White text for footer */
+    background: rgba(0, 0, 0, 0.7); /* Dark footer for contrast */
+    padding: 15px;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeInFooter 2s forwards, bounceFooter 1s infinite alternate; /* Fade and bounce animation */
+}
+
+/* Bounce Effect for Footer */
+@keyframes bounceFooter {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFooter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Media Queries for responsiveness */
+
+/* For screens smaller than 768px */
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .info p {
+        font-size: 16px;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
+}
+
+/* For very small screens (up to 480px) */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .info p {
+        font-size: 14px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+}
