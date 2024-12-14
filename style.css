@@ -20,35 +20,35 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('./Tata-Altroz.jpg') no-repeat center center fixed; /* Replace with your own background image */
+    background: url('./Tata-Altroz.jpg') no-repeat center center fixed;
     background-size: cover;
-    backdrop-filter: blur(8px); /* Apply blur effect */
-    -webkit-backdrop-filter: blur(8px); /* Safari support */
-    z-index: -1; /* Ensure it stays behind content */
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    z-index: -1;
 }
 
 /* Main Container */
 .container {
-    max-width: 700px; /* Increased box size */
-    margin: 50px auto;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)); /* Gradient overlay */
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    max-width: 90%;
+    margin: 2rem auto;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
     opacity: 0;
     transform: scale(0.8);
-    animation: fadeInScale 2s forwards; /* Combined fade and scale animation */
+    animation: fadeInScale 2s forwards;
 }
 
 /* Heading Styles */
 h1 {
     text-align: center;
-    color: #1E90FF; /* Blue color to match the background */
-    font-size: 3rem; /* Larger font size */
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+    color: #1E90FF;
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
     opacity: 0;
-    animation: slideIn 1.5s forwards, glow 2s infinite alternate; /* Slide-in and glow effect */
+    animation: slideIn 1.5s forwards, glow 2s infinite alternate;
 }
 
 /* Glow Effect for Heading */
@@ -63,67 +63,45 @@ h1 {
 
 /* Info Block */
 .info {
-    font-size: 20px;
-    margin-top: 20px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9); /* Light background for readability */
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease; /* Smooth transform effect on hover */
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
 .info p {
-    margin: 15px 0;
-    font-size: 18px;
-    color: #333; /* Darker color for text */
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: #333;
 }
 
 .info p strong {
-    color: #1E90FF; /* Blue color for labels like 'Name' */
+    color: #1E90FF;
 }
 
-/* Hover effect for info box */
+/* Hover Effect for Info Block */
 .info:hover {
-    transform: translateY(-5px); /* Slightly raises the info box */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.5rem 0.9375rem rgba(0, 0, 0, 0.3);
 }
 
 /* Footer Styles */
 .footer {
     text-align: center;
-    font-size: 16px;
-    margin-top: 40px;
-    color: #fff; /* White text for footer */
-    background: rgba(0, 0, 0, 0.7); /* Dark footer for contrast */
-    padding: 15px;
-    border-radius: 10px;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    border-radius: 0.625rem;
     opacity: 0;
-    animation: fadeInFooter 2s forwards, bounceFooter 1s infinite alternate; /* Fade and bounce animation */
-}
-
-/* Bounce Effect for Footer */
-@keyframes bounceFooter {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    animation: fadeInFooter 2s forwards, bounceFooter 1s infinite alternate;
 }
 
 /* Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 @keyframes fadeInScale {
     0% {
         opacity: 0;
@@ -155,45 +133,83 @@ h1 {
     }
 }
 
-/* Media Queries for responsiveness */
-
-/* For screens smaller than 768px */
-@media screen and (max-width: 768px) {
-    .container {
-        margin: 20px;
-        padding: 20px;
+@keyframes bounceFooter {
+    0% {
+        transform: translateY(0);
     }
-
-    h1 {
-        font-size: 2.5rem;
+    50% {
+        transform: translateY(-10px);
     }
-
-    .info p {
-        font-size: 16px;
-    }
-
-    .footer {
-        font-size: 14px;
+    100% {
+        transform: translateY(0);
     }
 }
 
-/* For very small screens (up to 480px) */
-@media screen and (max-width: 480px) {
-    .container {
-        width: 100%;
-        margin: 10px;
-        padding: 10px;
-    }
+/* Responsive Breakpoints */
 
+/* Large Desktops (>1200px) */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 70%;
+        padding: 3rem;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Tablets (up to 1024px) */
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 85%;
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    .info p {
+        font-size: 0.9rem;
+    }
+    .footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small Tablets and Phones (up to 768px) */
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        margin: 1rem auto;
+        padding: 1.5rem;
+    }
     h1 {
         font-size: 2rem;
     }
-
     .info p {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
-
     .footer {
-        font-size: 12px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Very Small Phones (up to 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+    .container {
+        width: 95%;
+        margin: 0.5rem auto;
+        padding: 1rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .info p {
+        font-size: 0.8rem;
+    }
+    .footer {
+        font-size: 0.7rem;
     }
 }
